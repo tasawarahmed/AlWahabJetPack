@@ -1,4 +1,4 @@
-package com.inanutshellglobal.alwahabjetpack
+package com.inanutshellglobal.alwahabjetpack.UiElements
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -21,6 +21,9 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.material3.Icon
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowDropDown
+import com.inanutshellglobal.alwahabjetpack.models.Exam
+import com.inanutshellglobal.alwahabjetpack.models.addExam
+import com.inanutshellglobal.alwahabjetpack.R
 
 @Composable
 fun RoundedDropdownMenu(

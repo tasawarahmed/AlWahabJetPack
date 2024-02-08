@@ -1,4 +1,4 @@
-package com.inanutshellglobal.alwahabjetpack
+package com.inanutshellglobal.alwahabjetpack.UiElements
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box

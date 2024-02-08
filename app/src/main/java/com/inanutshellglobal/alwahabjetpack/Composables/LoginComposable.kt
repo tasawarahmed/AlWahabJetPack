@@ -1,10 +1,8 @@
-package com.inanutshellglobal.alwahabjetpack
+package com.inanutshellglobal.alwahabjetpack.Composables
 
 import android.content.Intent
 import androidx.compose.animation.core.animateFloatAsState
-import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -41,12 +39,15 @@ import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
-import androidx.compose.ui.text.style.TextAlign
+import com.inanutshellglobal.alwahabjetpack.GuestActivity
+import com.inanutshellglobal.alwahabjetpack.R
+import com.inanutshellglobal.alwahabjetpack.StudentListActivity
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Login() {
-    val isImeVisible by rememberImeState()
+    //val isImeVisible by rememberImeState
+    val isImeVisible by com.inanutshellglobal.alwahabjetpack.rememberImeState()
     val context = LocalContext.current
     Box(
         modifier = Modifier.fillMaxSize(),
@@ -66,7 +67,7 @@ fun Login() {
         verticalArrangement = Arrangement.spacedBy(space = 10.dp)
     ) {
         val animateUpperSectionRatio by animateFloatAsState(
-            targetValue = if (isImeVisible) 0.25f else 0.5f,
+            targetValue = if (isImeVisible) 0.30f else 0.5f,
             label = ""
         )
         Box(
@@ -178,23 +179,30 @@ fun Login() {
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Bottom
     ) {
-        Card(
-            modifier = Modifier.fillMaxWidth(),
-            //border = BorderStroke(1.dp, color = colorResource(id = R.color.orange)),
-            colors = CardDefaults.cardColors(containerColor = colorResource(id = R.color.white))
-        ) {
-            TextButton(
-                onClick = { },
-                colors = ButtonDefaults.textButtonColors(
-                    contentColor = colorResource(
-                        id = R.color.blue_button
-                    )
-                )
+        val animateUpperSectionRatio by animateFloatAsState(
+            targetValue = if (isImeVisible) 0f else 0.1f,
+            label = ""
+        )
+
+        Box(modifier = Modifier.fillMaxHeight(animateUpperSectionRatio), contentAlignment = Alignment.BottomCenter){
+            Card(
+                modifier = Modifier.fillMaxWidth(),
+                //border = BorderStroke(1.dp, color = colorResource(id = R.color.orange)),
+                colors = CardDefaults.cardColors(containerColor = colorResource(id = R.color.white))
             ) {
-                //Text("Developed and Maintained by Israr Ahmed", fontWeight = FontWeight.Light, textAlign = TextAlign.Center)
-                Text(
-                    text = "Developed and Maintained by Mr. Israr Ahmed",
-                )
+                TextButton(
+                    onClick = { },
+                    colors = ButtonDefaults.textButtonColors(
+                        contentColor = colorResource(
+                            id = R.color.blue_button
+                        )
+                    )
+                ) {
+                    //Text("Developed and Maintained by Israr Ahmed", fontWeight = FontWeight.Light, textAlign = TextAlign.Center)
+                    Text(
+                        text = "Developed and Maintained by Mr. Israr Ahmed",
+                    )
+                }
             }
         }
     }

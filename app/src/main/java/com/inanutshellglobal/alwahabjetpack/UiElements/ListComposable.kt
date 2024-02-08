@@ -1,4 +1,4 @@
-package com.inanutshellglobal.alwahabjetpack
+package com.inanutshellglobal.alwahabjetpack.UiElements
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.lazy.LazyColumn

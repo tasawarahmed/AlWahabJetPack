@@ -1,4 +1,4 @@
-package com.inanutshellglobal.alwahabjetpack
+package com.inanutshellglobal.alwahabjetpack.models
 
 import kotlin.collections.mutableListOf
 

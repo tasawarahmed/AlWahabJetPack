@@ -1,4 +1,4 @@
-package com.inanutshellglobal.alwahabjetpack
+package com.inanutshellglobal.alwahabjetpack.models
 
 data class Diary(val subject: String, val task: String)
 

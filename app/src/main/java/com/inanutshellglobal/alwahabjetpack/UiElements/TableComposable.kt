@@ -1,4 +1,4 @@
-package com.inanutshellglobal.alwahabjetpack
+package com.inanutshellglobal.alwahabjetpack.UiElements
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Row
@@ -15,6 +15,8 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.border
 import androidx.compose.ui.res.colorResource
+import com.inanutshellglobal.alwahabjetpack.models.diaries
+import com.inanutshellglobal.alwahabjetpack.R
 
 @Composable
 fun RowScope.TableCell(

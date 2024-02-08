@@ -1,4 +1,4 @@
-package com.inanutshellglobal.alwahabjetpack
+package com.inanutshellglobal.alwahabjetpack.UiElements
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -19,6 +19,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import com.inanutshellglobal.alwahabjetpack.models.Exam
+import com.inanutshellglobal.alwahabjetpack.R
+import com.inanutshellglobal.alwahabjetpack.models.addExam
 
 @Composable
 fun ExamDropdownList(

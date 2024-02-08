@@ -1,4 +1,4 @@
-package com.inanutshellglobal.alwahabjetpack
+package com.inanutshellglobal.alwahabjetpack.Composables
 
 import android.content.Intent
 import androidx.compose.foundation.Image
@@ -31,6 +31,9 @@ import androidx.compose.material3.CardDefaults
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.sp
+import com.inanutshellglobal.alwahabjetpack.models.students
+import com.inanutshellglobal.alwahabjetpack.R
+import com.inanutshellglobal.alwahabjetpack.StudentDetailsActivity
 
 @Composable
 fun StudentList() {
@@ -68,7 +71,7 @@ fun StudentList() {
                         .fillMaxWidth(1f)
                         .padding(5.dp),
                     fontWeight = FontWeight.Bold,
-                    fontSize = 20.sp
+                    fontSize = 15.sp
                 )
                 Text(
                     text = "Please Select Your Student...",
@@ -82,7 +85,7 @@ fun StudentList() {
                         .fillMaxWidth(1f)
                         .padding(5.dp),
                     fontWeight = FontWeight.Bold,
-                    fontSize = 20.sp
+                    fontSize = 15.sp
                 )
             }
         }

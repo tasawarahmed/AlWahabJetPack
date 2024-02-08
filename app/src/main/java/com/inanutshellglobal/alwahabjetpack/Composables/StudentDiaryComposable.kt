@@ -1,4 +1,4 @@
-package com.inanutshellglobal.alwahabjetpack
+package com.inanutshellglobal.alwahabjetpack.Composables
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -18,6 +18,8 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.inanutshellglobal.alwahabjetpack.R
+import com.inanutshellglobal.alwahabjetpack.UiElements.TableScreen
 
 @Composable
 fun StudentDiary() {
@@ -54,7 +56,7 @@ fun StudentDiary() {
                         .fillMaxWidth(1f)
                         .padding(5.dp),
                     fontWeight = FontWeight.Bold,
-                    fontSize = 20.sp
+                    fontSize = 15.sp
                 )
                 Text(
                     text = "Please Select a Date",
@@ -68,7 +70,7 @@ fun StudentDiary() {
                         .fillMaxWidth(1f)
                         .padding(5.dp),
                     fontWeight = FontWeight.Bold,
-                    fontSize = 20.sp
+                    fontSize = 15.sp
                 )
             }
         }
@@ -76,7 +78,7 @@ fun StudentDiary() {
         Text(
             text = "Diary for Selected Date:",
             fontWeight = FontWeight.Bold,
-            fontSize = 18.sp
+            fontSize = 15.sp
         )
         TableScreen()
     }

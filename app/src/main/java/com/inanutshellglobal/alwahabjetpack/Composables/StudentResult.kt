@@ -1,4 +1,4 @@
-package com.inanutshellglobal.alwahabjetpack
+package com.inanutshellglobal.alwahabjetpack.Composables
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -21,6 +21,11 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.inanutshellglobal.alwahabjetpack.models.exams
+import com.inanutshellglobal.alwahabjetpack.models.results
+import com.inanutshellglobal.alwahabjetpack.R
+import com.inanutshellglobal.alwahabjetpack.UiElements.TableCell
+import com.inanutshellglobal.alwahabjetpack.UiElements.RoundedDropdownMenu
 
 @Composable
 fun StudentResult() {

@@ -1,4 +1,4 @@
-package com.inanutshellglobal.alwahabjetpack
+package com.inanutshellglobal.alwahabjetpack.models
 
 data class Student(val id: Int, val name: String, val currentClass: String)
 

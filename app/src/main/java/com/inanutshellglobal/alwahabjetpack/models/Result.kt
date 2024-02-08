@@ -1,4 +1,4 @@
-package com.inanutshellglobal.alwahabjetpack
+package com.inanutshellglobal.alwahabjetpack.models
 
 data class Result(val subject: String, val totalMarks: Int, var obtainedMarks: Int, val grade: String)
 

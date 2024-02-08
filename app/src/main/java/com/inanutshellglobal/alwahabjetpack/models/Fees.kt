@@ -1,4 +1,4 @@
-package com.inanutshellglobal.alwahabjetpack
+package com.inanutshellglobal.alwahabjetpack.models
 
 
 data class Fee(val id: Int, val feeMonth: String, val feeYear: String, val feeType: String, val feeAmount: Int, val dueDate: String, val isPaid: Boolean)
