@@ -12,7 +12,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.inanutshellglobal.alwahabjetpack.Composables.AnnouncementList
 import com.inanutshellglobal.alwahabjetpack.Composables.announcements
-import com.inanutshellglobal.alwahabjetpack.UiElements.BottomAppBarExample
 import com.inanutshellglobal.alwahabjetpack.ui.theme.AlWahabJetPackTheme
 
 class GuestActivity : ComponentActivity() {

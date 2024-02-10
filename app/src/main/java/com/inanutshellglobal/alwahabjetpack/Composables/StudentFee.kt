@@ -30,7 +30,7 @@ import com.inanutshellglobal.alwahabjetpack.models.fees
 import com.inanutshellglobal.alwahabjetpack.R
 
 @Composable
-fun StudentDetails() {
+fun StudentFee() {
     Box(
         modifier = Modifier.fillMaxSize(),
         contentAlignment = Alignment.Center
@@ -137,4 +137,3 @@ fun StudentDetails() {
         }
     }
 }
-
