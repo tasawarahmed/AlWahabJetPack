@@ -3,6 +3,7 @@ package com.inanutshellglobal.alwahabjetpack
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
@@ -24,10 +25,13 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.navigation.NavDestination
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavGraph.Companion.findStartDestination
+import com.inanutshellglobal.alwahabjetpack.ui.theme.BottomBarColor
+import com.inanutshellglobal.alwahabjetpack.ui.theme.BottomNavBarTheme
 
 
 class StudentDetailsActivity : ComponentActivity() {
@@ -38,7 +42,7 @@ class StudentDetailsActivity : ComponentActivity() {
                 // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
+                    //color = MaterialTheme.colorScheme.background
                 ) {
                     MainScreen()
                 }
@@ -55,7 +59,6 @@ fun MainScreen(){
     ) {
         it.calculateBottomPadding()
         BottomNavGraph(navController = navController)
-
     }
 }
 
@@ -69,11 +72,10 @@ fun BottomBar(navController: NavHostController){
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentDestination = navBackStackEntry?.destination
 
-    BottomNavigation(){
+    BottomNavigation{
         screens.forEach {screen ->
             AddItem(screen = screen, currentDestination = currentDestination, navController = navController)
         }
-
     }
 }
 
@@ -84,6 +86,7 @@ fun RowScope.AddItem(
     navController: NavHostController
 ){
     BottomNavigationItem(
+        modifier= Modifier.background(color = colorResource(id = R.color.fee_card)),
         label = {
             Text(text = screen.title, fontWeight = FontWeight.Bold, color = Color.White)
         },
