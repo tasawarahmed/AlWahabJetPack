@@ -10,13 +10,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.inanutshellglobal.alwahabjetpack.Composables.StudentList
-import com.inanutshellglobal.alwahabjetpack.ui.theme.AlWahabJetPackTheme
+import com.inanutshellglobal.alwahabjetpack.ui.theme.AlWahabListTheme
 
 class StudentListActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            AlWahabJetPackTheme {
+            AlWahabListTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),

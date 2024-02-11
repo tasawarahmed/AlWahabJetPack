@@ -69,6 +69,9 @@ dependencies {
     //implementation("androidx.navigation.navigation-compose:2.4.0-alpha10")
     implementation("androidx.navigation:navigation-compose:2.7.7")
     implementation("androidx.compose.material:material:1.6.1")
+    implementation("com.maxkeppeler.sheets-compose-dialogs:core:1.0.2")
+    implementation("com.maxkeppeler.sheets-compose-dialogs:calendar:1.0.2")
+
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")

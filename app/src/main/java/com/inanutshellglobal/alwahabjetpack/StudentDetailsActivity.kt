@@ -16,33 +16,29 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import com.inanutshellglobal.alwahabjetpack.ui.theme.AlWahabJetPackTheme
 import androidx.compose.material.BottomNavigation
 import androidx.compose.material.BottomNavigationItem
-import androidx.compose.material.ContentAlpha
 import androidx.compose.material.LocalContentColor
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.navigation.NavDestination
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavGraph.Companion.findStartDestination
-import com.inanutshellglobal.alwahabjetpack.ui.theme.BottomBarColor
-import com.inanutshellglobal.alwahabjetpack.ui.theme.BottomNavBarTheme
+import com.inanutshellglobal.alwahabjetpack.ui.theme.AlWahabDetailsTheme
 
 
 class StudentDetailsActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            AlWahabJetPackTheme {
+            AlWahabDetailsTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
-                    //color = MaterialTheme.colorScheme.background
+                    color = MaterialTheme.colorScheme.background
                 ) {
                     MainScreen()
                 }
@@ -97,7 +93,7 @@ fun RowScope.AddItem(
             it.route == screen.route
         } == true,
         selectedContentColor = LocalContentColor.current,
-        unselectedContentColor = LocalContentColor.current.copy(alpha = ContentAlpha.disabled),
+        unselectedContentColor = Color.Gray,
         onClick = {
             navController.navigate(screen.route){
                 popUpTo(navController.graph.findStartDestination().id)

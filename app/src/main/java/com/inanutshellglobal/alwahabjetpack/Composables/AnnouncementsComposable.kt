@@ -51,6 +51,7 @@ fun AnnouncementList(announcements: List<Announcement>) {
     ) {
         Text(
             text = "Important Announcements",
+            color = androidx.compose.ui.graphics.Color.Black,
             modifier = Modifier
                 .padding(5.dp)
                 .fillMaxWidth(),
@@ -75,9 +76,11 @@ fun AnnouncementList(announcements: List<Announcement>) {
                             Text(
                                 text = "Dated:",
                                 fontSize = 12.sp,
-                                fontWeight = FontWeight.Bold
+                                fontWeight = FontWeight.Bold,
+                                color = androidx.compose.ui.graphics.Color.Black
                             )
                             Text(
+                                color = androidx.compose.ui.graphics.Color.Black,
                                 text = " ${
                                     DateFormat.getDateInstance(DateFormat.MEDIUM)
                                         .format(announcement.startDate)
@@ -88,6 +91,7 @@ fun AnnouncementList(announcements: List<Announcement>) {
                         Row {
                             Text(text = "Due Date:",
                                 fontSize = 12.sp,
+                                color = androidx.compose.ui.graphics.Color.Black,
                                 fontWeight = FontWeight.Bold,
                                 //style = TextStyle(color = colorResource(id = R.color.blue_button))
                             )
@@ -95,12 +99,14 @@ fun AnnouncementList(announcements: List<Announcement>) {
                                 DateFormat.getDateInstance(DateFormat.MEDIUM)
                                     .format(announcement.endDate)
                             }",
+                                color = androidx.compose.ui.graphics.Color.Black,
                                 fontSize = 12.sp
                             )
                         }
                         Text(
                             text = announcement.message,
-                            fontSize = 14.sp
+                            fontSize = 14.sp,
+                            color = androidx.compose.ui.graphics.Color.Black
                         )
                     }
                 }
