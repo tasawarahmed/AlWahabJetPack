@@ -286,8 +286,8 @@ fun AlWahabLoginTheme(
         SideEffect {
             val window = (view.context as Activity).window
             //window.statusBarColor = Color.White.toArgb()
-            //window.statusBarColor = colorScheme.primary.toArgb()
-            window.statusBarColor = login_theme_light_primary.toArgb()
+            window.statusBarColor = colorScheme.primary.toArgb()
+            //window.statusBarColor = login_menu_color.toArgb()
             WindowCompat.getInsetsController(window, view).isAppearanceLightStatusBars = darkTheme
         }
     }
@@ -320,8 +320,8 @@ fun AlWahabListTheme(
         SideEffect {
             val window = (view.context as Activity).window
             //window.statusBarColor = Color.White.toArgb()
-            //window.statusBarColor = colorScheme.primary.toArgb()
-            window.statusBarColor = list_theme_light_secondary.toArgb()
+            window.statusBarColor = colorScheme.primary.toArgb()
+            //window.statusBarColor = list_menu_color.toArgb()
             WindowCompat.getInsetsController(window, view).isAppearanceLightStatusBars = darkTheme
         }
     }
@@ -354,8 +354,8 @@ fun AlWahabDetailsTheme(
         SideEffect {
             val window = (view.context as Activity).window
             //window.statusBarColor = Color.White.toArgb()
-            //window.statusBarColor = colorScheme.primary.toArgb()
-            window.statusBarColor = diary_theme_light_primary.toArgb()
+            window.statusBarColor = colorScheme.primary.toArgb()
+            //window.statusBarColor = diary_theme_light_primary.toArgb()
             WindowCompat.getInsetsController(window, view).isAppearanceLightStatusBars = darkTheme
         }
     }

@@ -2,6 +2,7 @@ package com.inanutshellglobal.alwahabjetpack.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
+
 val Purple80 = Color(0xFFD0BCFF)
 val PurpleGrey80 = Color(0xFFCCC2DC)
 val Pink80 = Color(0xFFEFB8C8)
@@ -19,7 +20,8 @@ val PrimaryBackgroundDark = Color(0xFF2D241C)
 val PrimaryTextDark = Color.White
 val SecondaryAccentDark = Color(0xFF1D1410)
 
-val diary_theme_light_primary = Color(0xFF9A4520)
+val diary_theme_light_primary = Color(0xFF2D241C)
+//val diary_theme_light_primary = Color(0xFF9A4520)
 val diary_theme_light_onPrimary = Color(0xFFFFFFFF)
 val diary_theme_light_primaryContainer = Color(0xFFFFDBCE)
 val diary_theme_light_onPrimaryContainer = Color(0xFF370E00)
@@ -81,7 +83,8 @@ val diary_theme_dark_surfaceTint = Color(0xFFFFB599)
 val diary_theme_dark_outlineVariant = Color(0xFF53433E)
 val diary_theme_dark_scrim = Color(0xFF000000)
 
-val list_theme_light_primary = Color(0xFF3E5AA9)
+val list_theme_light_primary = Color(0xFF114D9F)
+//val list_theme_light_primary = Color(0xFF3E5AA9)
 val list_theme_light_onPrimary = Color(0xFFFFFFFF)
 val list_theme_light_primaryContainer = Color(0xFFDBE1FF)
 val list_theme_light_onPrimaryContainer = Color(0xFF00174B)
@@ -143,7 +146,8 @@ val list_theme_dark_surfaceTint = Color(0xFFB4C5FF)
 val list_theme_dark_outlineVariant = Color(0xFF45464F)
 val list_theme_dark_scrim = Color(0xFF000000)
 
-val login_theme_light_primary = Color(0xFF964900)
+val login_theme_light_primary = Color(0xFFF78322)
+//val login_theme_light_primary = Color(0xFF964900)
 val login_theme_light_onPrimary = Color(0xFFFFFFFF)
 val login_theme_light_primaryContainer = Color(0xFFFFDCC7)
 val login_theme_light_onPrimaryContainer = Color(0xFF311300)
@@ -205,3 +209,5 @@ val login_theme_dark_surfaceTint = Color(0xFFFFB787)
 val login_theme_dark_outlineVariant = Color(0xFF52443C)
 val login_theme_dark_scrim = Color(0xFF000000)
 
+val login_menu_color = Color(0xFFF78322)
+val list_menu_color = Color(0xFF114D9F)

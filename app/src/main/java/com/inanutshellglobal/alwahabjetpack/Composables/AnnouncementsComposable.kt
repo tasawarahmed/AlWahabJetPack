@@ -22,6 +22,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
@@ -56,8 +57,9 @@ fun AnnouncementList(announcements: List<Announcement>) {
                 .padding(5.dp)
                 .fillMaxWidth(),
             fontWeight = FontWeight.Bold,
-            fontSize = 20.sp,
-            textAlign = TextAlign.Center
+            //fontSize = 20.sp,
+            textAlign = TextAlign.Center,
+            style = MaterialTheme.typography.headlineMedium
         )
         LazyColumn {
             items(sortedAnnouncements) { announcement ->
