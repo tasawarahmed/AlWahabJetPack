@@ -1,8 +1,10 @@
 package com.inanutshellglobal.alwahabjetpack.Composables
 
 import android.content.Intent
+import android.widget.Toast
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -74,7 +76,8 @@ fun Login() {
             modifier = Modifier
                 .fillMaxWidth(0.8f)
                 .fillMaxHeight(animateUpperSectionRatio),
-            contentAlignment = Alignment.BottomCenter
+                //.clickable { Toast.makeText(context, "Please enter Username", Toast.LENGTH_SHORT).show()},
+        contentAlignment = Alignment.BottomCenter
         ) {
             Image(
                 painter = painterResource(id = R.drawable.full_logo),
@@ -125,7 +128,8 @@ fun Login() {
                     keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
                     visualTransformation = PasswordVisualTransformation(),
                     onValueChange = { newText: String -> textPassword = newText },
-                    modifier = Modifier.fillMaxWidth(),
+                    modifier = Modifier
+                        .fillMaxWidth(),
                     label = { Text(text = "Password") },
                     leadingIcon = {
                         Icon(

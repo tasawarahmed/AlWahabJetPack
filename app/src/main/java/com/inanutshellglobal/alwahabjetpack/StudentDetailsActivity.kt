@@ -82,7 +82,8 @@ fun RowScope.AddItem(
     navController: NavHostController
 ){
     BottomNavigationItem(
-        modifier= Modifier.background(color = colorResource(id = R.color.fee_card)),
+        modifier = Modifier.background(MaterialTheme.colorScheme.primary),
+        //modifier= Modifier.background(color = colorResource(id = R.color.fee_card)),
         label = {
             Text(text = screen.title, fontWeight = FontWeight.Bold, color = Color.White)
         },
