@@ -59,16 +59,22 @@ dependencies {
     implementation("androidx.compose.ui:ui-graphics")
     implementation("androidx.compose.ui:ui-tooling-preview")
     implementation("androidx.compose.material3:material3")
-    implementation("androidx.compose.material3:material3:1.2.0-alpha05")
-    implementation("androidx.compose.material:material-icons-core:1.5.4")
     implementation(platform("androidx.compose:compose-bom:2023.03.00"))
     implementation(platform("androidx.compose:compose-bom:2023.03.00"))
     implementation(platform("androidx.compose:compose-bom:2023.08.00"))
     implementation("androidx.compose.ui:ui:1.6.0")
     implementation("androidx.compose.runtime:runtime:1.6.0")
     //implementation("androidx.navigation.navigation-compose:2.4.0-alpha10")
+
+    //Navigation Framework
     implementation("androidx.navigation:navigation-compose:2.7.7")
+
+    //Material 3 Dependency
     implementation("androidx.compose.material:material:1.6.1")
+    implementation("androidx.compose.material3:material3:1.2.0-alpha05")
+    implementation("androidx.compose.material:material-icons-core:1.5.4")
+
+    //Dependency for datepicker
     implementation("com.maxkeppeler.sheets-compose-dialogs:core:1.0.2")
     implementation("com.maxkeppeler.sheets-compose-dialogs:calendar:1.0.2")
 
