@@ -13,6 +13,8 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.State
+import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
@@ -21,11 +23,14 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.inanutshellglobal.alwahabjetpack.models.exams
 import com.inanutshellglobal.alwahabjetpack.models.results
 import com.inanutshellglobal.alwahabjetpack.R
 import com.inanutshellglobal.alwahabjetpack.UiElements.TableCell
 import com.inanutshellglobal.alwahabjetpack.UiElements.RoundedDropdownMenu
+import com.inanutshellglobal.alwahabjetpack.models.Result
+import com.inanutshellglobal.alwahabjetpack.viewmodels.ResultViewModel
 
 @Composable
 fun StudentResult() {
@@ -95,6 +100,9 @@ fun ResultTableScreen() {
     val column3Weight = .25f // 20%
     val column4Weight = .2f // 20%
 
+    val resultViewModel : ResultViewModel = viewModel()
+    val myResults : State<List<Result>> = resultViewModel.results.collectAsState()
+
     // The LazyColumn will be our table. Notice the use of the weights below
     LazyColumn(
         Modifier
@@ -110,7 +118,7 @@ fun ResultTableScreen() {
             }
         }
         // Here are all the lines of your table.
-        items(results) {
+        items(myResults.value) {
             val (subject, totalMarks, obtainedMarks, grade) = it
             Row(
                 Modifier

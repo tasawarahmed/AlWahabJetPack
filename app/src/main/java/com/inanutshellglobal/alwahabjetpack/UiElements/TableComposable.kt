@@ -14,9 +14,14 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.border
+import androidx.compose.runtime.State
+import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.res.colorResource
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.inanutshellglobal.alwahabjetpack.models.diaries
 import com.inanutshellglobal.alwahabjetpack.R
+import com.inanutshellglobal.alwahabjetpack.models.Diary
+import com.inanutshellglobal.alwahabjetpack.viewmodels.DiaryViewModel
 
 @Composable
 fun RowScope.TableCell(
@@ -40,6 +45,9 @@ fun TableScreen() {
     val column1Weight = .3f // 30%
     val column2Weight = .7f // 70%
 
+    val diaryViewModel : DiaryViewModel = viewModel()
+    val myDiaries : State<List<Diary>> = diaryViewModel.diary.collectAsState()
+
     // The LazyColumn will be our table. Notice the use of the weights below
     LazyColumn(
         Modifier
@@ -53,9 +61,12 @@ fun TableScreen() {
             }
         }
         // Here are all the lines of your table.
-        items(diaries) {
+        items(myDiaries.value) {
             val (subject, task) = it
-            Row(Modifier.fillMaxWidth().background(color = colorResource(id = R.color.fee_card).copy(alpha = 0.3f))) {
+            Row(
+                Modifier
+                    .fillMaxWidth()
+                    .background(color = colorResource(id = R.color.fee_card).copy(alpha = 0.3f))) {
                 TableCell(text = subject, weight = column1Weight)
                 TableCell(text = task, weight = column2Weight)
             }

@@ -28,12 +28,17 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.CardDefaults
+import androidx.compose.runtime.State
+import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.inanutshellglobal.alwahabjetpack.models.students
 import com.inanutshellglobal.alwahabjetpack.R
 import com.inanutshellglobal.alwahabjetpack.StudentDetailsActivity
+import com.inanutshellglobal.alwahabjetpack.models.Student
+import com.inanutshellglobal.alwahabjetpack.viewmodels.StudentViewModel
 
 @Composable
 fun StudentList() {
@@ -89,17 +94,26 @@ fun StudentList() {
                 )
             }
         }
+        val studentViewModel : StudentViewModel = viewModel()
+        val myStudents: State<List<Student>> = studentViewModel.students.collectAsState()
 
         LazyColumn(
             modifier = Modifier.fillMaxSize(),
             contentPadding = PaddingValues(16.dp),
             verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
-            items(students) { student ->
+            items(myStudents.value) { student ->
                 Card(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .clickable { context.startActivity(Intent(context, StudentDetailsActivity::class.java))},
+                        .clickable {
+                            context.startActivity(
+                                Intent(
+                                    context,
+                                    StudentDetailsActivity::class.java
+                                )
+                            )
+                        },
                     colors = CardDefaults.cardColors(
                         containerColor = colorResource(id = R.color.blue_button),
                         contentColor = colorResource(

@@ -23,11 +23,16 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.runtime.State
+import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextAlign
+import androidx.lifecycle.viewmodel.compose.viewModel
+import com.inanutshellglobal.alwahabjetpack.viewmodels.AnnouncementsViewModel
+import java.util.Stack
 
 @Composable
 fun AnnouncementList(announcements: List<Announcement>) {
@@ -61,8 +66,12 @@ fun AnnouncementList(announcements: List<Announcement>) {
             textAlign = TextAlign.Center,
             style = MaterialTheme.typography.headlineMedium
         )
+
+        val announcementsViewModel : AnnouncementsViewModel = viewModel()
+        val myAnnouncements: State<List<Announcement>> = announcementsViewModel.announcements.collectAsState()
+
         LazyColumn {
-            items(sortedAnnouncements) { announcement ->
+            items(myAnnouncements.value) { announcement ->
                 Card(
                     shape = RoundedCornerShape(8.dp),
                     colors = CardDefaults.cardColors(containerColor = colorResource(id = R.color.white)),

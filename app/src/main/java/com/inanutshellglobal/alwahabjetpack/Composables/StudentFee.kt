@@ -18,6 +18,8 @@ import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.State
+import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
@@ -26,8 +28,11 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.inanutshellglobal.alwahabjetpack.models.fees
 import com.inanutshellglobal.alwahabjetpack.R
+import com.inanutshellglobal.alwahabjetpack.models.Fee
+import com.inanutshellglobal.alwahabjetpack.viewmodels.FeeViewModel
 
 @Composable
 fun StudentFee() {
@@ -83,6 +88,11 @@ fun StudentFee() {
             }
         }
 
+
+        val feeViewModel : FeeViewModel = viewModel()
+        val paidFee : State<List<Fee>> = feeViewModel.paidFee.collectAsState()
+        val unpaidFee: State<List<Fee>> = feeViewModel.unpaidFee.collectAsState()
+
         val paidFees = fees.filter { it.isPaid }
         val unpaidFees = fees.filter {!(it.isPaid)}
 
@@ -97,7 +107,7 @@ fun StudentFee() {
             contentPadding = PaddingValues(16.dp),
             verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
-            items(fees) { fee ->
+            items(unpaidFee.value) { fee ->
                 Card(
                     modifier = Modifier
                         .fillMaxWidth(),
@@ -131,6 +141,54 @@ fun StudentFee() {
                             )
                         }
 
+                    }
+                }
+            }
+        }
+        Text(
+            text = "Paid Fee Details:",
+            fontWeight = FontWeight.Bold,
+            fontSize = 18.sp
+        )
+
+        LazyColumn(
+            modifier = Modifier.fillMaxSize(),
+            contentPadding = PaddingValues(16.dp),
+            verticalArrangement = Arrangement.spacedBy(16.dp)
+        ) {
+            items(paidFee.value) { fee ->
+                Card(
+                    modifier = Modifier
+                        .fillMaxWidth(),
+                    colors = CardDefaults.cardColors(
+                        containerColor = colorResource(id = R.color.fee_card),
+                        contentColor = colorResource(
+                            id = R.color.white
+                        )
+                    ),
+                    elevation = CardDefaults.cardElevation(
+                        defaultElevation = 15.dp
+                    ),
+                    shape = RoundedCornerShape(16.dp)
+                ) {
+                    Row(
+                        modifier = Modifier.padding(16.dp)
+                    ) {
+                        Column(
+                            modifier = Modifier.padding(start = 16.dp)
+                        ) {
+                            Text(
+                                text = "${fee.feeMonth} ${fee.feeYear}: ${fee.feeType}",
+                                fontWeight = FontWeight.Bold
+                            )
+                            Text(
+                                text = "Total Amount: ${fee.feeAmount}",
+                                fontWeight = FontWeight.Bold
+                            )
+                            Text(
+                                text = "Due Date: ${fee.dueDate}"
+                            )
+                        }
                     }
                 }
             }
