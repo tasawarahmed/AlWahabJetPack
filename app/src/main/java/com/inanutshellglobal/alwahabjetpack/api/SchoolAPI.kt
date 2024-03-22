@@ -11,7 +11,6 @@ import retrofit2.http.Header
 import java.util.Date
 
 interface SchoolAPI {
-
     @GET("students")
     suspend fun getStudents(@Header("parentID") pID: String) : Response<List<Student>>
 

@@ -95,6 +95,7 @@ fun StudentList() {
             }
         }
         val studentViewModel : StudentViewModel = viewModel()
+        studentViewModel.getStudents("abc")
         val myStudents: State<List<Student>> = studentViewModel.students.collectAsState()
 
         LazyColumn(

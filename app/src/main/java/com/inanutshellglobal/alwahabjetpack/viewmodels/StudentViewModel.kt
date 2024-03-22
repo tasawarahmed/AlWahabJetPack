@@ -15,9 +15,12 @@ class StudentViewModel @Inject constructor(private val repository : StudentRepos
     val students: StateFlow<List<Student>>
         get() = repository.students
 
-    init {
+    fun getStudents(parentID: String){
         viewModelScope.launch {
-            repository.getStudents("abc")
+            repository.getStudents(parentID)
         }
+    }
+
+    init {
     }
 }
